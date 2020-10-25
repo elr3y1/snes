@@ -1,1 +1,48 @@
-<p>juegos works!</p>
+<!--FORMA TRADICIONAL 
+    <div class="container">
+    <div class="card" style="width: 18rem;">
+        <img src="././assets/imgs/ctbox_front.jpg" class="card-img-top" alt="Chrono Trigger">
+        <div class="card-body">
+        <h5 class="card-title">Chrono Trigger</h5>
+        <p class="card-text">El mejor RPG de 1995.</p>
+        <a [routerLink]="['/about']" class="btn btn-primary">ver</a>
+        </div>
+    </div>
+</div> -->
+
+<!--Templete sencillo: hago mi maqueta manualmente pero con llamados angular-->
+<!-- <div class="container">
+    <div class="row">
+        <div class="card" style="width: 18rem;">
+            <img [src]="juego1.img" class="card-img-top" alt="{{ juego1.titulo }}">
+            <div class="card-body">
+            <h5 class="card-title">{{ juego1.titulo }}</h5>
+            <p class="card-text">{{juego1.subtitulo }}</p>
+            <a [routerLink]="['/about']" class="btn btn-primary">ver</a>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img [src]="juego2.img" class="card-img-top" alt="{{ juego2.titulo }}">
+            <div class="card-body">
+            <h5 class="card-title">{{ juego2.titulo }}</h5>
+            <p class="card-text">{{ juego2.subtitulo }}</p>
+            <a [routerLink]="['/about']" class="btn btn-primary">ver</a>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!--Templete maestro: detecto el codigo patron y uso ngFor para maquetar de forma dinamica-->
+<div class="container col-12">
+    <div class="row">
+        <div class="card col-lg-3 col-md-6 col-sm-12" style="width: 18rem;" *ngFor="let juego of listaJuegos">
+            <img [src]="juego.img" class="card-img-top" alt="{{ juego.titulo }}">
+            <div class="card-body">
+            <h5 class="card-title">{{ juego.titulo }}</h5>
+            <p class="card-text">{{juego.subtitulo }}</p>
+            <a [routerLink]="['/about']" class="btn btn-primary">ver</a>
+            </div>
+        </div>
+    </div>
+</div>
