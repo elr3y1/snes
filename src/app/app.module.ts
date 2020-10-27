@@ -7,6 +7,11 @@ import { JuegosComponent } from './juegos/juegos.component';
 import { AboutComponent } from './about/about.component';
 import { AppRoutingModule } from './app.routes';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { KitsComponent } from './kits/kits.component';
+
+//Kits
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,11 +19,14 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
     HomeComponent,
     JuegosComponent,
     AboutComponent,
-    NavbarComponent
+    NavbarComponent,
+    KitsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

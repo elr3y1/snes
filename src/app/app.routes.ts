@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { JuegosComponent } from './juegos/juegos.component';
 import { AboutComponent } from './about/about.component';
+import { KitsComponent } from './kits/kits.component';
  
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'juegos', component: JuegosComponent},
   { path: 'about', component: AboutComponent},
+  { path: 'kits', component: KitsComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];
  

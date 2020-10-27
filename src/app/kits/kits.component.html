@@ -1,0 +1,15 @@
+<div class="container col-md-5">
+    <div class="row">
+          <div class="form-group col-md-12">
+            <label for="exampleInputEmail1">Badge</label>
+            <input type="email" class="form-control"  [(ngModel)]="badge" id="badge" >
+            <small id="emailHelp" class="form-text text-muted"><b>Badge:</b> 73436 <b>Pass:</b> 073436A</small>
+          </div>
+          <div class="form-group col-md-12">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" [(ngModel)]="userPassword" id="userPassword">
+          </div>
+          <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
+          <span innerHtml="{{texto}}"></span>
+    </div>
+  </div>
