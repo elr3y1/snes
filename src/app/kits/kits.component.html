@@ -13,3 +13,99 @@
           <span innerHtml="{{texto}}"></span>
     </div>
   </div>
+  <hr>
+  <div class="container col-md-5">
+    <mat-form-field appearance="outline" color="accent">
+      <mat-label>Initial Date</mat-label>
+      <input matInput id="initialDate" [(ngModel)]="initialDate" [matDatepicker]="iDate">
+      <mat-datepicker-toggle matSuffix [for]="iDate"></mat-datepicker-toggle>
+      <mat-datepicker #iDate color="accent"></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="outline" color="accent">
+      <mat-label>final Date</mat-label>
+      <input matInput id="finalDate" [(ngModel)]="finalDate" [matDatepicker]="fDate">
+      <mat-datepicker-toggle matSuffix [for]="fDate"></mat-datepicker-toggle>
+      <mat-datepicker #fDate color="primary"></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="col-md-12" appearance="outline">
+      <mat-label>Station</mat-label>
+      <input matInput #_soInp id=Station [(ngModel)]="Station" placeholder="STATION" autocomplete="off" (keydown.enter)="traerDatos()" />
+
+    </mat-form-field>
+    <mat-hint>Stations:WVW_KTS_01 , IT_MAIN , ROL_KTS_01  </mat-hint>
+  </div>
+  <div class="container col-md-5">
+      <button type="submit" class="btn btn-secondary" (click)="traerDatos()">GET DATA TABLE >></button>
+  </div>
+  <hr>
+  <div class="container col-md-10">
+    <table mat-table [dataSource]="data" class="mat-elevation-z8">
+      <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+        <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+        <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="mostrar_datos(row)"></tr>
+    </table>
+    <hr>
+
+
+    <table mat-table [dataSource]="data" matSort class="mat-elevation-z8 col-md-12">
+
+      <ng-container matColumnDef="copies">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> COPIAS </th>
+        <td mat-cell *matCellDef="let element"> {{element.copies}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> DESCRIPCION </th>
+        <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="employee">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> EMPLEADO </th>
+        <td mat-cell *matCellDef="let element"> {{element.employee}} </td>
+      </ng-container>
+      <ng-container matColumnDef="kit">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> KIT IMPRESO </th>
+        <td mat-cell *matCellDef="let element"> {{element.kit}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="printTime">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> HORA IMPRESION </th>
+        <td mat-cell *matCellDef="let element"> {{element.printTime}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="station">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> TERMINAL </th>
+        <td mat-cell *matCellDef="let element"> {{element.station}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="ACCION">
+        <th mat-header-cell *matHeaderCellDef>  </th>
+        <th mat-header-cell *matCellDef="let element">
+          <div class="row">
+            <div class="col-1 offset-md-2">
+              <button mat-stroked-button color="primary" matTooltip="VIEW MORE DATA" (click)="mostrar_datos(element)">
+                <mat-icon>visibility</mat-icon>
+              </button>
+            </div>
+          </div>
+        </th>
+      </ng-container>
+
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <div class="" *ngIf="data.data.length<=0"><h4> 😟 NO RECORDS FOUND !<mat-icon color="warn">layers_clear</mat-icon></h4></div>
+
+    <mat-paginator [pageSize]="20" [pageSizeOptions]="[5, 10, 50, 100]" showFirstLastButtons></mat-paginator>
+
+
+
+  </div>
