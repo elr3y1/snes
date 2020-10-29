@@ -28,7 +28,7 @@ export class NasaBuscadorComponent implements OnInit {
     //una condicion que se cumple solo si existe valor en selectFecha
     if(this.selectFecha){
       this.mostrarDatos = true;
-      var apiUrl='https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY';
+      var apiUrl='https://api.nasa.gov/planetary/apod?api_key=xiabVxFWaDebvwAdAscrcWxZ2bgD1wA2qnZhtsKG';
       apiUrl+='&date='+this.selectFecha.getFullYear()+'-'+(this.selectFecha.getMonth()+1)+'-'+this.selectFecha.getDate();
       this.http.get(apiUrl).toPromise().then((respuesta:any)=>{
         console.log(respuesta)

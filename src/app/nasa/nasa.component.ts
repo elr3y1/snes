@@ -24,7 +24,7 @@ export class NasaComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.http.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2020-10-27&hd=true').toPromise().then((respuesta:any)=>{
+      this.http.get('https://api.nasa.gov/planetary/apod?api_key=xiabVxFWaDebvwAdAscrcWxZ2bgD1wA2qnZhtsKG&date=2020-10-27&hd=true').toPromise().then((respuesta:any)=>{
       console.log(respuesta)
       this.copyright=respuesta.copyright;
       this.date=respuesta.date;
@@ -45,7 +45,8 @@ export class NasaComponent implements OnInit {
   traerDatos(){
     //condiciono con el if para que no me muestre error si no hay valor asignado en el selectFecha
     if(this.selectFecha){
-      var lafecha=this.selectFecha.getFullYear()+'/'+(this.selectFecha.getMonth()+1)+'/'+this.selectFecha.getDate();
+      //formatear fecha 2020/10/28
+      var lafecha=this.selectFecha.getFullYear()+'-'+(this.selectFecha.getMonth()+1)+'-'+this.selectFecha.getDate();
       alert(lafecha);
 
   }

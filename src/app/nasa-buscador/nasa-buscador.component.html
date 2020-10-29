@@ -1,16 +1,37 @@
-<mat-form-field appearance="outline" color="accent">
-    <mat-label>Selecciona la Fecha</mat-label>
-    <input matInput id="selectFecha" [(ngModel)]="selectFecha" [matDatepicker]="sFecha" (dateChange)="traerDatos()">
-    <mat-datepicker-toggle matSuffix [for]="sFecha" ></mat-datepicker-toggle>
-    <mat-datepicker #sFecha color="accent"></mat-datepicker>
-</mat-form-field>
-<hr>
-<div *ngIf="mostrarDatos">
-  <span><strong>copyright:</strong></span><span>{{copyright}}</span><br>
-  <span><strong>date:</strong></span><span>{{date}}</span><br>
-  <span><strong>explanation:</strong></span><span>{{explanation}}</span><br>
-  <div class=" img-thumbnail">
-      <img src="{{url}}" title="{{title}}">
-  </div>
-  <a href="{{hdurl}}">ver en HD</a>
+<div class="container col-md-12">
+    <div class="row col-md-5">
+        <h1><img src="././assets/imgs/nasa.png" width="100px" height="auto"> Bienvenido a la API de la NASA <span class="badge badge-secondary">APOD</span></h1>
+        <p class="lead">Podras ver la foto del dia y su informacion</p>
+    </div>    
+        <hr>
+        <mat-form-field appearance="outline" color="accent">
+            <mat-label>Selecciona una Fecha</mat-label>
+            <input matInput id="selectFecha" [(ngModel)]="selectFecha" [matDatepicker]="sFecha" (dateChange)="traerDatos()">
+            <mat-datepicker-toggle matSuffix [for]="sFecha" ></mat-datepicker-toggle>
+            <mat-datepicker #sFecha color="accent"></mat-datepicker>
+        </mat-form-field>
+        <hr>
+        <!-- <div *ngIf="mostrarDatos">
+        <span><strong>copyright:</strong></span><span>{{copyright}}</span><br>
+        <span><strong>date:</strong></span><span>{{date}}</span><br>
+        <span><strong>explanation:</strong></span><span>{{explanation}}</span><br>
+        <div class=" img-thumbnail">
+            <img src="{{url}}" title="{{title}}">
+        </div>
+        <a href="{{hdurl}}">ver en HD</a>
+        </div> -->
+
+
+        <div *ngIf="mostrarDatos" class="jumbotron col-lg-5 col-md-8 col-sm-12">
+            <h1 class="display-4">{{title}}</h1>
+            <img [src]="url" class="img-fluid">
+            <p class="lead">
+                {{copyright}}
+                <br><span class="badge badge-dark">{{date}}</span>
+            </p>
+            <hr class="my-2">
+            <p>{{explanation}}</p>
+            <a class="btn btn-dark btn-md float-right" href="{{hdurl}}" target="_blank" role="button">Ver en HD</a>
+        </div>
+    
 </div>
