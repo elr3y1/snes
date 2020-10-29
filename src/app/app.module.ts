@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NasaComponent } from './nasa/nasa.component';
+import { NasaBuscadorComponent } from './nasa-buscador/nasa-buscador.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NasaComponent } from './nasa/nasa.component';
     AboutComponent,
     NavbarComponent,
     KitsComponent,
-    NasaComponent
+    NasaComponent,
+    NasaBuscadorComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import { JuegosComponent } from './juegos/juegos.component';
 import { AboutComponent } from './about/about.component';
 import { KitsComponent } from './kits/kits.component';
 import { NasaComponent  } from "./nasa/nasa.component";
+import { NasaBuscadorComponent  } from "./nasa-buscador/nasa-buscador.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent},
   { path: 'kits', component: KitsComponent},
   { path: 'nasa', component: NasaComponent},
+  { path: 'nasabuscador', component: NasaBuscadorComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];
 
