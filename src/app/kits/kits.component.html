@@ -22,7 +22,7 @@
       <mat-datepicker #iDate color="accent"></mat-datepicker>
     </mat-form-field>
     <mat-form-field appearance="outline" color="accent">
-      <mat-label>final Date</mat-label>
+      <mat-label>Final Date</mat-label>
       <input matInput id="finalDate" [(ngModel)]="finalDate" [matDatepicker]="fDate">
       <mat-datepicker-toggle matSuffix [for]="fDate"></mat-datepicker-toggle>
       <mat-datepicker #fDate color="primary"></mat-datepicker>
@@ -30,8 +30,7 @@
 
     <mat-form-field class="col-md-12" appearance="outline">
       <mat-label>Station</mat-label>
-      <input matInput #_soInp id=Station [(ngModel)]="Station" placeholder="STATION" autocomplete="off" (keydown.enter)="traerDatos()" />
-
+      <input matInput #_soInp id=Station [(ngModel)]="Station" autocomplete="off" (keydown.enter)="traerDatos()" />
     </mat-form-field>
     <mat-hint>Stations:WVW_KTS_01 , IT_MAIN , ROL_KTS_01  </mat-hint>
   </div>
