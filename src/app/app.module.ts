@@ -14,6 +14,7 @@ import { MaterialDesignModule } from './material-design/material-design.module'
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NasaComponent } from './nasa/nasa.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     JuegosComponent,
     AboutComponent,
     NavbarComponent,
-    KitsComponent
+    KitsComponent,
+    NasaComponent
   ],
   imports: [
     BrowserModule,
