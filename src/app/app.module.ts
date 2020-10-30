@@ -22,6 +22,7 @@ import { NasaBuscadorComponent } from './nasa-buscador/nasa-buscador.component';
 //Snes
 import { SnesComponent } from './snes/snes.component';
 import { SnesService } from './shared/snes.service';
+import { SupernesComponent } from './supernes/supernes.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { SnesService } from './shared/snes.service';
     KitsComponent,
     NasaComponent,
     NasaBuscadorComponent,
-    SnesComponent
+    SnesComponent,
+    SupernesComponent
   ],
   imports: [
     BrowserModule,

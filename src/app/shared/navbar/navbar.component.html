@@ -12,11 +12,15 @@
         <li class="nav-item" routerLinkActive="active">
           <a class="nav-link" [routerLink]="['/home']">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" [routerLink]="['/juegos']">Juegos</a>
-        </li>
-        <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" [routerLink]="['/snes']">Snes Games</a>
+        <li class="nav-item dropdown" routerLinkActive="active">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Games
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" [routerLink]="['/juegos']">Juegos</a>
+            <a class="dropdown-item" [routerLink]="['/snes']">Snes</a>
+            <a class="dropdown-item" [routerLink]="['/snes-api']">Snes API</a>
+          </div>
         </li>
         <li class="nav-item" routerLinkActive="active">
           <a class="nav-link" [routerLink]="['/about']">About</a>

@@ -8,15 +8,28 @@ import {Juego} from '../shared/juego';// llamo a la interface Juego
   ]
 })
 export class JuegosComponent implements OnInit {
+  //Declaro variables y les asigno un modelo dibujado en la interface Juego que previamente ya importe.
   juego1: Juego;// se crea un elemento juego1 que obedece al modelo Juego.
   juego2: Juego;
   juego3: Juego;
   juego4: Juego;
   listaJuegos: Juego[];
+  
+  //atributo boton el cual tiene un objeto json con atributo habilitado
+  boton = {
+    habilitado: true,
+    leyenda: "ver",
+    clase: "btn btn-danger"
+  };
+  botonLg = {
+    clase: "btn btn-primary btn-lg btn-block"
+  };
+
   constructor() { }
 
   ngOnInit(): void {
     console.log('iniciando nuestro componente juegos');
+    //Defino los objetos para cada una de las variables, estas obedecen a los atributos declarados en la interface, si intento poner uno que no este declarado en la interface mostrara un mensaje de error.
     this.juego1 = {
       titulo: "Castlevania Dracula X",
       subtitulo: "Un super juegazo de plataformas de la saga de Konami.",
@@ -47,9 +60,35 @@ export class JuegosComponent implements OnInit {
         <h3>"Final Fantasy VI es una entrega que tiene todos los elementos para merecer el estatus que tiene: el mejor de la serie."</h3>`,
         img: "./assets/imgs/finalfantasy3.jpg"
       };
-
+      
     this.listaJuegos = [this.juego1,this.juego2,this.juego3,this.juego4]
+    //cambio el valor de un objeto con una funcion de typescript
+    setTimeout(() =>{
+      this.juego4 = {
+        titulo: "Super Mario World",
+        subtitulo: "el primer juego protagonizado por Mario para SNES y que recoge el debut de Yoshi",
+        descripcion: `<p>En conclucion Super Mario World es un juego exelente, quizas la historia no es la mas original en la saga de Mario, pero todo lo demas es bellisimo, los "Mundos", los nuevos Power-Ups, los jefes, los niveles y los enemigos, todo es hermoso y genial.</p>`,
+        img: "./assets/imgs/mario.jpg"
+      };
+      this.juego1 = {
+        titulo: "Contra III: The Alien Wars",
+        subtitulo: "tenía todo lo que necesitaba un juego para convertirse en leyenda: inmejorable acción, muy buenas armas, buenas gráficas, buen sonido y un modo cooperativo.",
+        descripcion: `<p>La historia del juego se lleva a cabo 2 años después de los eventos ocurridos en Super Contra, en el año 2636, en donde los aliens, comandados por el Halcón Rojo (Red Falcon) atacan la Tierra en gran escala. Nuestros amigos son enviados para acabar con el Halcón Rojo.
+        Este juego contaba con 2 modos, uno en el que tú sólo tenías que enfrentarte a los peligros de Neo City y otro en el que podías invitar a un cuate para que te ayudara a pasar tu difícil misión. Contabas también con una opción con la cual podías agregarte o quitarte más vidas, esto era para aumentar o disminuir el nivel de dificultad, que por cierto es bastante alto, por suerte, no llega a ser frustrante.</p>`,
+        img: "./assets/imgs/contra3.jpg"
+      };
+      this.listaJuegos = [this.juego1,this.juego2,this.juego3,this.juego4]
+    }, 4500);//cambia en 3 segundos
+    
+    setTimeout(() => {
+        this.boton.habilitado = false;
+        this.boton.leyenda= "ya no puedes ver";
+        this.boton.clase= "btn btn-secondary";
+    }, 900);
 
+    setTimeout(() => {
+      this.botonLg.clase = "btn btn-dark btn-lg btn-block";
+  }, 6000);
   }
 
 }

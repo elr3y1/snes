@@ -24,14 +24,15 @@
 
         <div *ngIf="mostrarDatos" class="jumbotron col-lg-5 col-md-8 col-sm-12">
             <h1 class="display-4">{{title}}</h1>
-            <img [src]="url" class="img-fluid">
+            <img [hidden]="!hdurl" [src]="url" class="img-fluid">
+            <a [hidden]="hdurl" href="{{url}}" target="_blank">ver video</a> 
             <p class="lead">
                 {{copyright}}
                 <br><span class="badge badge-dark">{{date}}</span>
             </p>
             <hr class="my-2">
             <p>{{explanation}}</p>
-            <a class="btn btn-dark btn-md float-right" href="{{hdurl}}" target="_blank" role="button">Ver en HD</a>
+            <a class="btn btn-dark btn-md float-right" *ngIf="hdurl" href="{{hdurl}}" target="_blank" role="button">Ver en HD</a>
         </div>
     
 </div>
