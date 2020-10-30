@@ -49,7 +49,7 @@ export class JuegosComponent implements OnInit {
       };
 
     this.listaJuegos = [this.juego1,this.juego2,this.juego3,this.juego4]
-  
+
   }
 
 }
