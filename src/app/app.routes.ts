@@ -6,6 +6,7 @@ import { AboutComponent } from './about/about.component';
 import { KitsComponent } from './kits/kits.component';
 import { NasaComponent  } from "./nasa/nasa.component";
 import { NasaBuscadorComponent  } from "./nasa-buscador/nasa-buscador.component";
+import { SnesComponent } from './snes/snes.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'kits', component: KitsComponent},
   { path: 'nasa', component: NasaComponent},
   { path: 'nasabuscador', component: NasaBuscadorComponent},
+  { path: 'snes', component: SnesComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];
 

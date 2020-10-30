@@ -1,0 +1,16 @@
+<ng-container *ngFor="let column of snes | keyvalue ">
+    <strong>{{column.key}}:</strong>{{column.value}}<br>
+  </ng-container>
+
+<!-- <div class="container col-12">
+    <div class="row">
+        <div class="card col-lg-3 col-md-6 col-sm-12" style="width: 18rem;">
+            <img [src]="snes.img" class="card-img-top" alt="{{ snes.titulo }}">
+            <div class="card-body">
+            <h5 class="card-title">{{ snes.titulo }}</h5>
+            <p class="card-text">{{snes.subtitulo }}</p>
+            <a [routerLink]="['/about']" class="btn btn-primary">ver</a>
+            </div>
+        </div>
+    </div>
+</div> -->

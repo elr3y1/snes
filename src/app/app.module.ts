@@ -14,8 +14,14 @@ import { MaterialDesignModule } from './material-design/material-design.module'
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+//Nasa
 import { NasaComponent } from './nasa/nasa.component';
 import { NasaBuscadorComponent } from './nasa-buscador/nasa-buscador.component';
+
+//Snes
+import { SnesComponent } from './snes/snes.component';
+import { SnesService } from './shared/snes.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +32,8 @@ import { NasaBuscadorComponent } from './nasa-buscador/nasa-buscador.component';
     NavbarComponent,
     KitsComponent,
     NasaComponent,
-    NasaBuscadorComponent
+    NasaBuscadorComponent,
+    SnesComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +43,7 @@ import { NasaBuscadorComponent } from './nasa-buscador/nasa-buscador.component';
     BrowserAnimationsModule,
     MaterialDesignModule
   ],
-  providers: [],
+  providers: [SnesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
