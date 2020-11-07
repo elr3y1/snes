@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Juego } from '../shared/juego';
 import { SnesService } from '../shared/snes.service';
 import { Router } from "@angular/router";//servira para enviar informacion a about
-//import { } from './shared/snes.service'
+
 
 @Component({
   selector: 'app-snes',
